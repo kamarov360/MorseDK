@@ -11,9 +11,9 @@ public class MorseDK
     {
         Scanner wejscie = new Scanner(System.in);
         System.out.println(autor);
-        System.out.println("1. Przerób tekst na kod Morse'a.");
+        System.out.println("1. Pomoc.");
         System.out.println("2. Przerób kod Morse'a na tekst.");
-        System.out.println("3. Pomoc.");
+        System.out.println("3. Przerób tekst na kod Morse'a.");
         System.out.println("4. Wyjście z programu.");
         do
         {
@@ -24,7 +24,7 @@ public class MorseDK
                 switch (wybor)
                 {
                     case 1:
-                        System.out.println("opcja 1");
+                        System.out.println("Program służy do przerabiania tekstu na kod Morse'a lub kodu Morse'a na tekst.\nWybierz odpowiednią opcję z menu za pomocą cyfry aby przejść do danego wyboru.");
                         break;
                     case 2:
                         System.out.println("opcja 2");
@@ -33,9 +33,8 @@ public class MorseDK
                         System.out.println("opcja 3");
                         break;
                     case 4:
-                        System.out.println("Do widzenia.");
+                        System.out.println("Dziękuję za skorzystanie z programu, do widzenia.");
                         System.exit(0);
-                        break;
                     default:
                         System.out.println("Nieprawidłowe dane switch.");
                         System.out.print("Podaj prawidłową opcję: ");
@@ -47,7 +46,7 @@ public class MorseDK
                 System.out.println("Podałeś nieprawidłową opcję.");
             }
         }
-        while (wybor > 4 || wybor < 1);
+        while (wybor > 4 || wybor < 2);
     }
 }
     //public static void tekstNaMorse(String text)
