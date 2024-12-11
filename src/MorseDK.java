@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MorseDK
 {
     public static final String autor = "Program stworzony przez Kubę Witkowskiego. Społeczna Akademia Nauk w Łodzi, kierunek - Informatyka.\nNumer albumu - 106263, grupa - IV, semestr - I.";
-
+    public static int wybor = 0;
     //tutaj można umieścić publiczne stałe zmienne z kodami Morse'a
 
     public static void main(String[] args)
@@ -15,31 +15,38 @@ public class MorseDK
         System.out.println("2. Przerób kod Morse'a na tekst.");
         System.out.println("3. Pomoc.");
         System.out.println("4. Wyjście z programu.");
-        try
-        {
-            int wybor = wejscie.nextInt();
-            switch (wybor)
+            try
             {
-                case 1:
-                    System.out.println("opcja 1");
-                    break;
-                case 2:
-                    System.out.println("opcja 2");
-                    break;
-                case 3:
-                    System.out.println("opcja 3");
-                    break;
-                case 4:
-                    System.out.println("opcja 4");
-                    break;
-                    default:
-                        System.out.println("Nieprawidłowe dane switch.");
-                        break;
+                {
+                    //while (wybor < 5 && wybor > 0)
+                    do
+                    {
+                        int wybor = wejscie.nextInt();
+                        switch (wybor) {
+                            case 1:
+                                System.out.println("opcja 1");
+                                break;
+                            case 2:
+                                System.out.println("opcja 2");
+                                break;
+                            case 3:
+                                System.out.println("opcja 3");
+                                break;
+                            case 4:
+                                System.out.println("opcja 4");
+                                break;
+                            default:
+                                System.out.println("Nieprawidłowe dane switch.");
+                                break;
+                        }
+                    }
+                    while (wybor > 4 || wybor < 1);
+                }
             }
-        }
-        catch (InputMismatchException e)
-        {
-            System.out.println("Podałeś nieprawidłową opcję.");
+            catch (InputMismatchException e)
+            {
+                System.out.println("Podałeś nieprawidłową opcję.");
+            }
         }
     }
     //public static void tekstNaMorse(String text)
@@ -50,4 +57,3 @@ public class MorseDK
     //{
 
     //}
-}
