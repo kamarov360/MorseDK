@@ -17,7 +17,7 @@ public class MorseDK {
         {
             try
             {
-                int wybor = wejscie.nextInt();
+                wybor = wejscie.nextInt();
                 switch (wybor)
                 {
                     case 1:
@@ -34,14 +34,16 @@ public class MorseDK {
                         break;
                     default:
                         System.out.println("Nieprawidłowe dane switch.");
+                        System.out.println("Podaj prawidłową opcję.");
                         break;
                 }
 
             } catch (InputMismatchException e) {
                 System.out.println("Podałeś nieprawidłową opcję.");
+                wybor = 0;
             }
         }
-        while (wybor > 4 || wybor < 1) ;
+        while (wybor > 4 || wybor < 1);
     }
 }
     //public static void tekstNaMorse(String text)
