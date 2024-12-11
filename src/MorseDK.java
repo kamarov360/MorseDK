@@ -1,12 +1,14 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MorseDK {
+public class MorseDK
+{
     public static final String autor = "Program stworzony przez Kubę Witkowskiego. Społeczna Akademia Nauk w Łodzi, kierunek - Informatyka.\nNumer albumu - 106263, grupa - IV, semestr - I.";
     public static int wybor = 0;
     //tutaj można umieścić publiczne stałe zmienne z kodami Morse'a
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner wejscie = new Scanner(System.in);
         System.out.println(autor);
         System.out.println("1. Przerób tekst na kod Morse'a.");
@@ -17,6 +19,7 @@ public class MorseDK {
         {
             try
             {
+                System.out.print("Wybór: ");
                 wybor = wejscie.nextInt();
                 switch (wybor)
                 {
@@ -30,17 +33,18 @@ public class MorseDK {
                         System.out.println("opcja 3");
                         break;
                     case 4:
-                        System.out.println("opcja 4");
+                        System.out.println("Do widzenia.");
+                        System.exit(0);
                         break;
                     default:
                         System.out.println("Nieprawidłowe dane switch.");
-                        System.out.println("Podaj prawidłową opcję.");
+                        System.out.print("Podaj prawidłową opcję: ");
                         break;
                 }
-
-            } catch (InputMismatchException e) {
+            }
+            catch (InputMismatchException e)
+            {
                 System.out.println("Podałeś nieprawidłową opcję.");
-                wybor = 0;
             }
         }
         while (wybor > 4 || wybor < 1);
