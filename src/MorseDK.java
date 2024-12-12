@@ -26,21 +26,20 @@ public class MorseDK
                 switch (wybor)
                 {
                     case 1:
-                        System.out.println("Program służy do przerabiania tekstu na kod Morse'a lub kodu Morse'a na tekst.\nWybierz odpowiednią opcję z menu za pomocą cyfry, aby przejść do danego wyboru.");
-                        poprawnyWybor = true;
+                        System.out.println("\nProgram służy do przerabiania tekstu na kod Morse'a lub kodu Morse'a na tekst.\nWybierz odpowiednią opcję z menu za pomocą cyfry, aby przejść do danego wyboru.\n");
                         break;
                     case 2:
-                        System.out.println("opcja 2");
                         poprawnyWybor = true;
+                        System.out.print("Wpisz kod Morse'a który chcesz przerobić na tekst: ");
                         break;
                     case 3:
-                        System.out.println("opcja 3");
                         poprawnyWybor = true;
+                        System.out.println("Wpisz tekst który chcesz przerobić na kod Morse'a: ");
                         break;
                     case 4:
-                        System.out.println("Dziękuję za skorzystanie z programu, do widzenia.");
                         poprawnyWybor = true;
-                        System.exit(0);
+                        System.out.println("Dziękuję za skorzystanie z programu, do widzenia.");
+                        System.exit(0);//Kończy program ze statusem 0 - prawidłowym na żądanie użytkownika
                     default:
                         System.out.println("Nieprawidłowa opcja. Wybierz ponownie.");
                 }
@@ -48,22 +47,16 @@ public class MorseDK
             catch (InputMismatchException e)
             {
                 System.out.println("Podałeś nieprawidłową wartość. Podaj liczbę całkowitą.");
-                wejscie.next();//służy do oczyszczenia bufora wejściowego w przypadku, gdy użytkownik poda nieprawidłowe dane
-                poprawnyWybor = false;
+                wejscie.next();//Służy do oczyszczenia bufora wejściowego w przypadku, gdy użytkownik poda nieprawidłowe dane
             }
         }
-        while (!poprawnyWybor);
+        while (!poprawnyWybor);//pętla będzie działać cały czas do momentu kiedy poprawnyWybor = false
 
         wejscie.close();//zamyka scanner
     }
 }
+//zrobie jedna klase w ktorej bedzie przerabianie tekstu na Morse'a i Morse na tekst
+class KonwerterMorse
+{
 
-//scanner.close();
-    //public static void tekstNaMorse(String text)
-    //{
-
-    //}
-    //public static void morseNaTekst(String text)
-    //{
-
-    //}
+}
