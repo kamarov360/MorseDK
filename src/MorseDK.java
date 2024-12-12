@@ -9,16 +9,16 @@ public class MorseDK
 
     public static void main(String[] args)
     {
-        Scanner wejscie = new Scanner(System.in);
         System.out.println(autor);
-        System.out.println("1. Pomoc.");
-        System.out.println("2. Przerób kod Morse'a na tekst.");
-        System.out.println("3. Przerób tekst na kod Morse'a.");
-        System.out.println("4. Wyjście z programu.");
+        Scanner wejscie = new Scanner(System.in);
         do
         {
             try
             {
+                System.out.println("1. Pomoc.");
+                System.out.println("2. Przerób kod Morse'a na tekst.");
+                System.out.println("3. Przerób tekst na kod Morse'a.");
+                System.out.println("4. Wyjście z programu.");
                 System.out.print("Wybór: ");
                 wybor = wejscie.nextInt();
                 switch (wybor)
