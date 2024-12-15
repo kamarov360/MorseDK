@@ -10,8 +10,8 @@ public class KonwerterMorse
 
     static
     {
-        //do mapowania użyto strony:
-        // Znaki alfabetu
+        /*do zmapowania znaków posługiwano się zawartością strony: https://alfabetmorsa.pl/
+        Znaki alfabetu:*/
         przerabianieTekstuNaMorse.put('A', ".-");
         przerabianieTekstuNaMorse.put('B', "-...");
         przerabianieTekstuNaMorse.put('C', "-.-.");
@@ -50,7 +50,7 @@ public class KonwerterMorse
         przerabianieTekstuNaMorse.put('0', "-----");
         przerabianieTekstuNaMorse.put(' ', "/");
 
-        // Znaki diakrytyczne
+        //Znaki diakrytyczne
         przerabianieTekstuNaMorse.put('Ą', ".-.-");
         przerabianieTekstuNaMorse.put('Ć', "-.-..");
         przerabianieTekstuNaMorse.put('Ę', "..-..");
@@ -61,9 +61,25 @@ public class KonwerterMorse
         przerabianieTekstuNaMorse.put('Ż', "--..-.");
         przerabianieTekstuNaMorse.put('Ź', "--..-");
 
-        // Interpunkcja
+        //Znaki interpunkcyjne i symbole
         przerabianieTekstuNaMorse.put('.', ".-.-.-");
         przerabianieTekstuNaMorse.put(',', "--..--");
+        przerabianieTekstuNaMorse.put('\'', "--..--");
+        przerabianieTekstuNaMorse.put('\"', ".-..-.");
+        przerabianieTekstuNaMorse.put('_', "..--.-");
+        przerabianieTekstuNaMorse.put(':', "---...");
+        przerabianieTekstuNaMorse.put(';', "-.-.-.");
+        przerabianieTekstuNaMorse.put('?', "..--..");
+        przerabianieTekstuNaMorse.put('!', "-.-.--");
+        przerabianieTekstuNaMorse.put('-', "-....-");
+        przerabianieTekstuNaMorse.put('+', ".-.-.");
+        przerabianieTekstuNaMorse.put('/', "-..-.");
+        przerabianieTekstuNaMorse.put('(', "-.--.");
+        przerabianieTekstuNaMorse.put(')', "-.--.-");
+        przerabianieTekstuNaMorse.put('=', "-...-");
+        przerabianieTekstuNaMorse.put('@', ".--.-.");
+
+
 
         // Tworzenie odwrotnej mapy
         for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet())
