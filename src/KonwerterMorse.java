@@ -1,12 +1,16 @@
+//repozytorium Github: https://github.com/kamarov360/MorseDK.git
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class KonwerterMorse {
-
+public class KonwerterMorse
+{
     private static final HashMap<Character, String> przerabianieTekstuNaMorse = new HashMap<>();
     private static final HashMap<String, Character> przerabianieMorseNaTekst = new HashMap<>();
 
-    static {
+    static
+    {
+        //do mapowania użyto strony:
         // Znaki alfabetu
         przerabianieTekstuNaMorse.put('A', ".-");
         przerabianieTekstuNaMorse.put('B', "-...");
@@ -62,35 +66,48 @@ public class KonwerterMorse {
         przerabianieTekstuNaMorse.put(',', "--..--");
 
         // Tworzenie odwrotnej mapy
-        for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet()) {
+        for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet())
+        {
             przerabianieMorseNaTekst.put(entry.getValue(), entry.getKey());
         }
     }
 
-    public static String przerobNaTekst(String text) {
+    public static String przerobNaTekst(String tekst)
+    {
         StringBuilder morseCode = new StringBuilder();
-        for (char c : text.toUpperCase().toCharArray()) {
-            if (przerabianieTekstuNaMorse.containsKey(c)) {
+        for (char c : tekst.toUpperCase().toCharArray())
+        {
+            if (przerabianieTekstuNaMorse.containsKey(c))
+            {
                 morseCode.append(przerabianieTekstuNaMorse.get(c)).append(" ");
-            } else {
+            }
+            else
+            {
                 morseCode.append("? "); // Znak nieobsługiwany
             }
         }
         return morseCode.toString().trim();
     }
 
-    public static String przerobNaMorse(String morse) {
-        StringBuilder text = new StringBuilder();
+    public static String przerobNaMorse(String morse)
+    {
+        StringBuilder tekst = new StringBuilder();
         String[] morseSymbols = morse.split(" ");
-        for (String symbol : morseSymbols) {
-            if (przerabianieMorseNaTekst.containsKey(symbol)) {
-                text.append(przerabianieMorseNaTekst.get(symbol));
-            } else if (symbol.equals("/")) {
-                text.append(" ");
-            } else {
-                text.append("?"); // Kod nieobsługiwany
+        for (String symbol : morseSymbols)
+        {
+            if (przerabianieMorseNaTekst.containsKey(symbol))
+            {
+                tekst.append(przerabianieMorseNaTekst.get(symbol));
+            }
+            else if (symbol.equals("/"))
+            {
+                tekst.append(" ");
+            }
+            else
+            {
+                tekst.append("?"); // Kod nieobsługiwany
             }
         }
-        return text.toString(); // Zwracamy zbudowany ciąg znaków
+        return tekst.toString(); // Zwracam zbudowany ciąg znaków
     }
 }
