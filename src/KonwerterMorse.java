@@ -84,7 +84,7 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
         /*do zmapowania znaków posługiwano się zawartością strony: https://en.wikipedia.org/wiki/Russian_Morse_code
         Cyrylica
 
-        Przykład do testowania: МОЯ СЕМЬЯ, tłumacz online: https://morsecodetranslator.com/russian-morse-code-translator/
+        Przykład do testowania: МОЯ СЕМЬЯ, tłumacz online: https://kodMorsetranslator.com/russian-morse-code-translator/
 
         Obecnie niedostępne
 
@@ -133,21 +133,21 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
 
     public static String przerobNaTekst(String tekst)
     {
-        StringBuilder morseCode = new StringBuilder();
+        StringBuilder kodMorse = new StringBuilder();
         for (char c : tekst.toUpperCase().toCharArray())
         {
             if (przerabianieTekstuNaMorse.containsKey(c))
             {
                 /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
                 a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
-                morseCode.append(przerabianieTekstuNaMorse.get(c)).append(" ");
+                kodMorse.append(przerabianieTekstuNaMorse.get(c)).append(" ");
             }
             else
             {
-                morseCode.append("? "); //Znak nieobsługiwany
+                kodMorse.append("? "); //Znak nieobsługiwany
             }
         }
-        return morseCode.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
+        return kodMorse.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
     }
 
     public static String przerobNaMorse(String morse)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
