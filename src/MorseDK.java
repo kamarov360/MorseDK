@@ -46,7 +46,7 @@ public class MorseDK //deklaracja publicznej klasy MorseDK.
                         System.out.println("\nKod Morse'a na podstawie tekstu: " + KonwerterMorse.przerobNaTekst(tekst));//wywołanie metody przerobNaTekst() z klasy KonwerterMorse, przekazywany argument to tekst po przerobieniu z kodu Morse który wprowadził wcześniej użytkownik.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                     case 4: //wybór 4
-                        System.out.print("Dziękuję za skorzystanie z programu. Do widzenia.");//Wyświetla napis w konsoli.
+                        System.out.print("\nDziękuję za skorzystanie z programu. Do widzenia.");//Wyświetla napis w konsoli.
                         scanner.close();//zamknięcie nasłuchu scanner
                         System.exit(0); //Program zamyka się na żądanie użytkownika ze statusem 0 (prawidłowym).
                     default://Instrukcja w przypadku kiedy użytkownik wpisze liczbę całkowitą, ale spoza zakresu 1-4 np. 6
