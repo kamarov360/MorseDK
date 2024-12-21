@@ -138,35 +138,39 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
         {
             if (przerabianieTekstuNaMorse.containsKey(c))
             {
+                /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
+                a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
                 morseCode.append(przerabianieTekstuNaMorse.get(c)).append(" ");
             }
             else
             {
-                morseCode.append("? "); // Znak nieobsługiwany
+                morseCode.append("? "); //Znak nieobsługiwany
             }
         }
-        return morseCode.toString().trim();
+        return morseCode.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
     }
 
-    public static String przerobNaMorse(String morse)
+    public static String przerobNaMorse(String morse)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
+
     {
-        StringBuilder tekst = new StringBuilder();
-        String[] morseSymbols = morse.split(" ");
-        for (String symbol : morseSymbols)
+        StringBuilder tekst = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
+        String[] morseSymbols = morse.split(" ");//Rozdzielenie kodu Morse'a na symbole według spacji
+        for (String symbol : morseSymbols)//Iteracja po symbolach Morse'a
         {
+            //Jeśli symbol jest obsługiwany, znajdź jego odpowiednik w mapie
             if (przerabianieMorseNaTekst.containsKey(symbol))
             {
                 tekst.append(przerabianieMorseNaTekst.get(symbol));
             }
-            else if (symbol.equals("/"))
+            else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
             {
-                tekst.append(" ");
+                tekst.append(" ");//Dodanie spacji jako separatora między słowami
             }
             else
             {
-                tekst.append("?"); // Kod nieobsługiwany
+                tekst.append("?"); //Kod nieobsługiwany
             }
         }
-        return tekst.toString(); // Zwracam zbudowany ciąg znaków
+        return tekst.toString(); //Zwracam zbudowany ciąg znaków
     }
 }
