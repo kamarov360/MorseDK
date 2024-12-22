@@ -7,6 +7,8 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
 {
     private static final HashMap<Character, String> przerabianieTekstuNaMorse = new HashMap<>();//tworzy mapę, która przechowuje parę klucz jako character np. "A" i wartość String np. kod Morse ".-".
     private static final HashMap<String, Character> przerabianieMorseNaTekst = new HashMap<>();//tworzy mapę odwrotną do poprzedniej, przechowuje parę klucz jako String (kod Morse) i Character jako literę z alfabetu.
+    private static final HashMap<String, Character> przerabianieMorseNaTekstCyrylica = new HashMap<>();//tworzy mapę, która przechowuje parę klucz jako character np. "A" i wartość String np. kod Morse ".-".
+    private static final HashMap<Character, String> przerabianieTekstuNaMorseCyrylica = new HashMap<>();//tworzy mapę, która przechowuje parę klucz jako character np. "A" i wartość String np. kod Morse ".-".
 
     static//Blok static to specjalny blok kodu, który jest wykonywany tylko raz, w momencie ładowania klasy do pamięci (zanim zostaną utworzone jakiekolwiek obiekty tej klasy). Statyczne pola są wspólne dla całej klasy i nie są powielane dla każdego obiektu, co oszczędza pamięć.
     {
@@ -86,41 +88,70 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
 
         Przykład do testowania: МОЯ СЕМЬЯ, tłumacz online: https://kodMorsetranslator.com/russian-morse-code-translator/
 
-        Obecnie niedostępne
+        Obecnie niedostępne*/
 
-        przerabianieTekstuNaMorse.put('А', "·−");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Б', "-...");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('В', ".--");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Г', "--.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Д', "-..");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Е', ".");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ж', "....-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('З', "--..");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('И', "..");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Й', ".---");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('К', "-.-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Л', ".-..");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('М', "--");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Н', "-.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('О', "---");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('П', ".--.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Р', ".-.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('С', "...");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Т', "-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('У', "..-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ф', "..-.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Х', "....");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ц', "-.-.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ч', "---.");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ш', "----");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Щ', "--.-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ъ', "--.--");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ы', "-.--");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ь', "-..-");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Э', "..-..");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Ю', "..--");//przypisanie klucza i wartości (key, value)
-        przerabianieTekstuNaMorse.put('Я', ".-.-");//przypisanie klucza i wartości (key, value)
-        */
+        przerabianieTekstuNaMorseCyrylica.put('А', "·−");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Б', "-...");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('В', ".--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Г', "--.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Д', "-..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Е', ".");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ж', "....-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('З', "--..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('И', "..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Й', ".---");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('К', "-.-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Л', ".-..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('М', "--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Н', "-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('О', "---");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('П', ".--.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Р', ".-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('С', "...");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Т', "-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('У', "..-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ф', "..-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Х', "....");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ц', "-.-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ч', "---.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ш', "----");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Щ', "--.-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ъ', "--.--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ы', "-.--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ь', "-..-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Э', "..-..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Ю', "..--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('Я', ".-.-");//przypisanie klucza i wartości (key, value)
+
+        przerabianieTekstuNaMorseCyrylica.put('1', ".----");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('2', "..---");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('3', "...--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('4', "....-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('5', ".....");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('6', "-....");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('7', "--...");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('8', "---..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('9', "----.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('0', "-----");//przypisanie klucza i wartości (key, value)
+
+        przerabianieTekstuNaMorseCyrylica.put('.', ".-.-.-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put(',', "--..--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('\'', "--..--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('\"', ".-..-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('_', "..--.-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put(':', "---...");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put(';', "-.-.-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('?', "..--..");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('!', "-.-.--");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('-', "-....-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('+', ".-.-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('/', "-..-.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('(', "-.--.");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put(')', "-.--.-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('=', "-...-");//przypisanie klucza i wartości (key, value)
+        przerabianieTekstuNaMorseCyrylica.put('@', ".--.-.");//przypisanie klucza i wartości (key, value)
+
+        przerabianieTekstuNaMorseCyrylica.put(' ', "/");//przypisanie klucza i wartości (key, value)
 
         //przerabianieTekstuNaMorse.put('Odbiór', ".---------."); Nie zadziała ponieważ program oczekuje w kluczu typu danych Char a nie String
 
@@ -150,7 +181,7 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
         return kodMorse.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
     }
 
-    public static String przerobNaMorse(String morse)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
+    public static String przerobNaMorseCyrylica(String morse)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
 
     {
         StringBuilder tekst = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
@@ -158,9 +189,9 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
         for (String symbol : morseSymbols)//Iteracja po symbolach Morse'a
         {
             //Jeśli symbol jest obsługiwany, znajdź jego odpowiednik w mapie
-            if (przerabianieMorseNaTekst.containsKey(symbol))
+            if (przerabianieMorseNaTekstCyrylica.containsKey(symbol))
             {
-                tekst.append(przerabianieMorseNaTekst.get(symbol));
+                tekst.append(przerabianieMorseNaTekstCyrylica.get(symbol));
             }
             else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
             {
@@ -171,6 +202,57 @@ public class KonwerterMorse//deklaracja publicznej klasy KonwerterMorse
                 tekst.append("?"); //Kod nieobsługiwany
             }
         }
+
+        //
+         //
+         //cyrylica
+          //
+        for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorseCyrylica.entrySet())
+        {
+            przerabianieMorseNaTekstCyrylica.put(entry.getValue(), entry.getKey());
+        }
         return tekst.toString(); //Zwracam zbudowany ciąg znaków
+    }
+    public static String przerobNaTekstCyrylica(String tekstCyrylica)
+    {
+        StringBuilder kodMorseCyrylica = new StringBuilder();
+        for (char c : tekstCyrylica.toUpperCase().toCharArray())
+        {
+            if (przerabianieTekstuNaMorseCyrylica.containsKey(c))
+            {
+                /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorseCyrylica),
+                a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
+                kodMorseCyrylica.append(przerabianieTekstuNaMorseCyrylica.get(c)).append(" ");
+            }
+            else
+            {
+                kodMorseCyrylica.append("? "); //Znak nieobsługiwany
+            }
+        }
+        return kodMorseCyrylica.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
+    }
+
+    public static String przerobNaMorse(String morse)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
+
+    {
+        StringBuilder tekstCyrylica = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
+        String[] morseSymbols = morse.split(" ");//Rozdzielenie kodu Morse'a na symbole według spacji
+        for (String symbol : morseSymbols)//Iteracja po symbolach Morse'a
+        {
+            //Jeśli symbol jest obsługiwany, znajdź jego odpowiednik w mapie
+            if (przerabianieMorseNaTekstCyrylica.containsKey(symbol))
+            {
+                tekstCyrylica.append(przerabianieMorseNaTekstCyrylica.get(symbol));
+            }
+            else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
+            {
+                tekstCyrylica.append(" ");//Dodanie spacji jako separatora między słowami
+            }
+            else
+            {
+                tekstCyrylica.append("?"); //Kod nieobsługiwany
+            }
+        }
+        return tekstCyrylica.toString(); //Zwracam zbudowany ciąg znaków
     }
 }
