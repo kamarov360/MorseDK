@@ -154,8 +154,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorse.put(')', "-.--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('=', "-...-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('@', ".--.-.");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorse.put('$', "- ...-..-");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorse.put('&', "- .-...");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorse.put('$', "...-..-");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorse.put('&', ".-...");//przypisanie klucza i wartości (key, value)
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
             for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet()) {
@@ -201,7 +201,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             return tekst.toString(); //Zwracam zbudowany ciąg znaków
         }
     }
-
+    //Cyrylica
     public class KonwerterMorseCyrylica {
         private static final HashMap<Character, String> przerabianieTekstuNaMorseCyrylica = new HashMap<>();//tworzy mapę, która przechowuje parę klucz jako character np. "A" i wartość String np. kod Morse ".-".
         private static final HashMap<String, Character> przerabianieMorseNaTekstCyrylica = new HashMap<>();//tworzy mapę odwrotną do poprzedniej, przechowuje parę klucz jako String (kod Morse) i Character jako literę z alfabetu.
@@ -209,10 +209,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
         static
         {
             //do zmapowania znaków posługiwano się zawartością strony: https://en.wikipedia.org/wiki/Russian_Morse_code
-            //Cyrylica
-            //Przykład do testowania: МОЯ СЕМЬЯ, tłumacz online: https://morsecodetranslator.com/russian-morse-code-translator/
-            //Obecnie niedostępne
-            przerabianieTekstuNaMorseCyrylica.put('А', "·−");//przypisanie klucza i wartości (key, value)
+            //Przykład do testowania: МОЯ СЕМЬЯ, tłumacz online: https://convertmorse.com/
+            przerabianieTekstuNaMorseCyrylica.put('А', ".-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Б', "-...");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('В', ".--");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Г', "--.");//przypisanie klucza i wartości (key, value)
@@ -277,8 +275,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorseCyrylica.put(')', "-.--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('=', "-...-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('@', ".--.-.");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorseCyrylica.put('$', "- ...-..-");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorseCyrylica.put('&', "- .-...");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('$', "...-..-");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('&', ".-...");//przypisanie klucza i wartości (key, value)
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
             for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorseCyrylica.entrySet())
