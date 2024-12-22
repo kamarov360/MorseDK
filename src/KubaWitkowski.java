@@ -140,7 +140,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             //Znaki interpunkcyjne i symbole
             przerabianieTekstuNaMorse.put('.', ".-.-.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put(',', "--..--");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorse.put('\'', "--..--");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorse.put('\'', ".----.");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('\"', ".-..-.");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('_', "..--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put(':', "---...");//przypisanie klucza i wartości (key, value)
@@ -154,6 +154,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorse.put(')', "-.--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('=', "-...-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorse.put('@', ".--.-.");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorse.put('$', "- ...-..-");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorse.put('&', "- .-...");//przypisanie klucza i wartości (key, value)
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
             for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet()) {
@@ -242,7 +244,9 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorseCyrylica.put('Э', "..-..");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Ю', "..--");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Я', ".-.-");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('Ё', ".--.--"); // przypisanie klucza i wartości (key, value)
 
+            //cyfry
             przerabianieTekstuNaMorseCyrylica.put('1', ".----");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('2', "..---");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('3', "...--");//przypisanie klucza i wartości (key, value)
@@ -259,7 +263,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             //Znaki interpunkcyjne i symbole
             przerabianieTekstuNaMorseCyrylica.put('.', ".-.-.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put(',', "--..--");//przypisanie klucza i wartości (key, value)
-            przerabianieTekstuNaMorseCyrylica.put('\'', "--..--");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('\'', ".----.");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('\"', ".-..-.");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('_', "..--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put(':', "---...");//przypisanie klucza i wartości (key, value)
@@ -273,6 +277,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorseCyrylica.put(')', "-.--.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('=', "-...-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('@', ".--.-.");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('$', "- ...-..-");//przypisanie klucza i wartości (key, value)
+            przerabianieTekstuNaMorseCyrylica.put('&', "- .-...");//przypisanie klucza i wartości (key, value)
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
             for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorseCyrylica.entrySet())
@@ -283,7 +289,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
 
         public static String przerobNaTekstCyrylica(String tekstCyrylica)
         {
-            StringBuilder morseCode = new StringBuilder();
+            StringBuilder morseCode = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
             StringBuilder kodMorse = new StringBuilder();
             for (char c : tekstCyrylica.toUpperCase().toCharArray())
             {
