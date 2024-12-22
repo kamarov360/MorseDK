@@ -54,8 +54,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                         System.out.println("\nNieprawidłowy wybór, nie ma takiej pozycji w menu. Spróbuj ponownie wpisując wartość z zakresu od 1 do 4.");//Wyświetla w konsoli napis i przechodzi do nowej linii. Dodatkowo przed "\n" pozwala na przejście do nowej linii co jest udogodnieniem w czytelności programu.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                 }
-            } catch (
-                    InputMismatchException e) //Obsługa wyjątku w przypadku kiedy użytkownik wpisze tekst zamiast liczby całkowitej przy wyborze z menu
+            }
+            catch (InputMismatchException e) //Obsługa wyjątku w przypadku kiedy użytkownik wpisze tekst zamiast liczby całkowitej przy wyborze z menu
             {
                 System.out.println("\nBłąd: wprowadź liczbę całkowitą."); //Informacja o błędnie wpisanej wartości, przejście do nowej linii. Elemnt "\n" oddziela linię "Wybór".
                 scanner.nextLine(); //Czyszczenie bufora po błędzie
@@ -185,21 +185,26 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             //przerabianieTekstuNaMorse.put('Odbiór', ".---------."); Nie zadziała ponieważ program oczekuje w kluczu typu danych Char a nie String
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
-            for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet()) {
+            for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet())
+            {
                 przerabianieMorseNaTekst.put(entry.getValue(), entry.getKey());
             }
         }
-
-        public static String przerobNaTekst(String tekst) {
+        public static String przerobNaTekst(String tekst)
+        {
             StringBuilder morseCode = new StringBuilder();
             StringBuilder kodMorse = new StringBuilder();
-            for (char c : tekst.toUpperCase().toCharArray()) {
-                if (przerabianieTekstuNaMorse.containsKey(c)) {
+            for (char c : tekst.toUpperCase().toCharArray())
+            {
+                if (przerabianieTekstuNaMorse.containsKey(c))
+                {
                 /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
                 a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
                     morseCode.append(przerabianieTekstuNaMorse.get(c)).append(" ");
                     kodMorse.append(przerabianieTekstuNaMorse.get(c)).append(" ");
-                } else {
+                }
+                else
+                {
                     morseCode.append("? "); //Znak nieobsługiwany
                     kodMorse.append("? "); //Znak nieobsługiwany
                 }
@@ -216,12 +221,16 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             for (String symbol : morseSymbols)//Iteracja po symbolach Morse'a
             {
                 //Jeśli symbol jest obsługiwany, znajdź jego odpowiednik w mapie
-                if (przerabianieMorseNaTekst.containsKey(symbol)) {
+                if (przerabianieMorseNaTekst.containsKey(symbol))
+                {
                     tekst.append(przerabianieMorseNaTekst.get(symbol));
-                } else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
+                }
+                else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
                 {
                     tekst.append(" ");//Dodanie spacji jako separatora między słowami
-                } else {
+                }
+                else
+                {
                     tekst.append("?"); //Kod nieobsługiwany
                 }
             }
