@@ -6,19 +6,17 @@ import java.util.Map;//importuje interfejs Map, który jest ogólnym kontraktem 
 import java.util.Scanner;//import klasy Scanner, potrzebnej do wykorzystania w celu odczytania danych z konsoli od użytkownika.
 public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
 {
-    private final String autor = "Program stworzony przez Kubę Witkowskiego. Społeczna Akademia Nauk w Łodzi, kierunek - Informatyka.\nNumer albumu - 106263, grupa - IV, semestr - I.";//Deklaracja zmiennej autor, jest dostępna tylko wewnątrz klasy. Ma wartość stałą, jej typ danych to String, czyli łańcuch tekstu.
+    private final String autor = "\nProgram stworzony przez Kubę Witkowskiego. Numer albumu - 106263, grupa - IV, semestr - I.\nSpołeczna Akademia Nauk, kierunek - Informatyka. Łódź, Polska.";//Deklaracja zmiennej autor, jest dostępna tylko wewnątrz klasy. Ma wartość stałą, jej typ danych to String, czyli łańcuch tekstu.
 
     public static void main(String[] args)//Metoda main jest punktem wejścia do programu, który jest wywoływany przez JVM.
     {
-        KubaWitkowski obj = new KubaWitkowski();//Ta linia tworzy nowy obiekt klasy MorseDK i przypisuje jego referencję do zmiennej obj. Obiekt ten będzie używany do interakcji z metodami i właściwościami klasy MorseDK
-        System.out.println(obj.autor);//Wyświetla tekst w konsoli na podstawie zmiennej prywatnej autor. Inicjalizacja możliwa dzięki powołaniu się na obiekt.
-
         Scanner scanner = new Scanner(System.in);//Scanner to klasa wbudowana w bibliotekę Java. "scanner" to nazwa zmiennej obiektowej, używam tej zmiennej do wywoływania metod klasy Scanner. "new" Tworzy nowy obiekt klasy Scanner. Scanner jest skonstruowany z System.in, będzie odczytywał dane wpisane przez użytkownika z klawiatury.
-
+        KubaWitkowski obj = new KubaWitkowski();//Ta linia tworzy nowy obiekt klasy MorseDK i przypisuje jego referencję do zmiennej obj. Obiekt ten będzie używany do interakcji z metodami i właściwościami klasy MorseDK
         while (true)//Nieskończona pętla while, pętla posiada warunek true. Dzięki niej program działa cały czas, chyba że użytkownik zakończy działanie, wybierając opcję 4 z menu.
         {
             try//Blok try jest używany do "opakowania" kodu, który może wygenerować wyjątek (błąd) w trakcie wykonania.
             {
+                System.out.println(obj.autor);//Wyświetla tekst w konsoli na podstawie zmiennej prywatnej autor. Inicjalizacja możliwa dzięki powołaniu się na obiekt.
                 System.out.println("\nMenu:");//Wyświetla użytkownikowi napis "Menu:" i przechodzi do nowej linii. Znak \n pomaga w stworzeniu pustej linii po wyświetleniu zawartości zmiennej autor.
                 System.out.println("1. Pomoc");//Wyświetla użytkownikowi napis "1. Pomoc" i przechodzi do nowej linii.
                 System.out.println("2. Przerób kod Morse'a na tekst");//Wyświetla użytkownikowi napis "2. Przerób kod Morse'a na tekst" i przechodzi do nowej linii.
