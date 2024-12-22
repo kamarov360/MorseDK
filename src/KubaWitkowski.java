@@ -23,7 +23,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                 System.out.println("3. Przerób tekst na kod Morse'a (alfabet łaciński z obsługą polskich znaków diaktrycznych)");//Wyświetla użytkownikowi napis "3. Przerób tekst na kod Morse'a (alfabet łaciński z obsługą polskich znaków diaktrycznych)" i przechodzi do nowej linii.
                 System.out.println("4. Przerób kod Morse'a na tekst (cyrylica rosyjska)");//Wyświetla użytkownikowi napis "4. Przerób kod Morse'a na tekst (cyrylica rosyjska)" i przechodzi do nowej linii.
                 System.out.println("5. Przerób tekst na kod Morse'a (cyrylica rosyjska)");//Wyświetla użytkownikowi napis "5. Przerób tekst na kod Morse'a (cyrylica rosyjska)" i przechodzi do nowej linii.
-                System.out.println("6. Wyjście");//Wyświetla użytkownikowi napis "6. Wyjście" i przechodzi do nowej linii.
+                System.out.println("6. Wyjście z programu");//Wyświetla użytkownikowi napis "6. Wyjście" i przechodzi do nowej linii.
                 System.out.print("Wybór: ");//Wyświetla użytkownikowi napis "Wybór: ".
 
                 int wybor = scanner.nextInt();//Deklaracja zmiennej wybor w postaci integer i wykorzystanie obiektu klasy Scanner jako nasłuch liczby całkowitej
@@ -34,7 +34,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                     case 1: //wybór 1
                         System.out.println("\nProgram umożliwia konwersję tekstu na kod Morse'a oraz odwrotnie.");//Program wyświetla napis i przechodzi do nowej linii. Element "\n" służy do przejścia do nowej linii przed wyświetleniem tekstu co pozwala na zwiększenie czytelności.
                         System.out.println("Więcej informacji na temat kodu Morse dostępna na stronie: https://pl.wikipedia.org/wiki/Kod_Morse%E2%80%99a");//Program wyświetla napis oraz hiperłącze i przechodzi do nowej linii.
-                        System.out.println("Tłumaczenie https://alfabetmorsa.pl/");//Program wyświetla napis oraz hiperłącze i przechodzi do nowej linii.
+                        System.out.println("Tłumaczenie: 'https://alfabetmorsa.pl/' oraz 'https://en.wikipedia.org/wiki/Russian_Morse_code'");//Program wyświetla napis oraz hiperłącze i przechodzi do nowej linii.
                         System.out.println("W przypadku konwersji kodu Morse na tekst proszę jako spacji używać znaku ' / ', przykładowo: '.--. .-. --.. -.-- -.- .-..- .- -.. --- .-- -.-- / - . -.- ... -'");
                         System.out.println("Wybierz opcję z menu, aby kontynuować.");//Program wyświetla napis i przechodzi do nowej linii.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
@@ -66,8 +66,8 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                         System.out.println("\nNieprawidłowy wybór, nie ma takiej pozycji w menu. Spróbuj ponownie wpisując wartość z zakresu od 1 do 4.");//Wyświetla w konsoli napis i przechodzi do nowej linii. Dodatkowo przed "\n" pozwala na przejście do nowej linii co jest udogodnieniem w czytelności programu.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                 }
-            } catch (
-                    InputMismatchException e) //Obsługa wyjątku w przypadku kiedy użytkownik wpisze tekst zamiast liczby całkowitej przy wyborze z menu
+            }
+            catch (InputMismatchException e) //Obsługa wyjątku w przypadku kiedy użytkownik wpisze tekst zamiast liczby całkowitej przy wyborze z menu
             {
                 System.out.println("\nBłąd: wprowadź liczbę całkowitą."); //Informacja o błędnie wpisanej wartości, przejście do nowej linii. Elemnt "\n" oddziela linię "Wybór".
                 scanner.nextLine(); //Czyszczenie bufora po błędzie
@@ -158,19 +158,25 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorse.put('&', ".-...");//przypisanie klucza i wartości (key, value)
 
             //Tworzenie odwrotnej mapy używając interfejsu "Map"
-            for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet()) {
+            for (Map.Entry<Character, String> entry : przerabianieTekstuNaMorse.entrySet())
+            {
                 przerabianieMorseNaTekst.put(entry.getValue(), entry.getKey());
             }
         }
 
-        public static String przerobNaTekst(String tekst) {
+        public static String przerobNaTekst(String tekst)
+        {
             StringBuilder kodMorse = new StringBuilder();
-            for (char c : tekst.toUpperCase().toCharArray()) {
-                if (przerabianieTekstuNaMorse.containsKey(c)) {
+            for (char c : tekst.toUpperCase().toCharArray())
+            {
+                if (przerabianieTekstuNaMorse.containsKey(c))
+                {
                 /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
                 a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
                     kodMorse.append(przerabianieTekstuNaMorse.get(c)).append(" ");
-                } else {
+                }
+                else
+                {
                     kodMorse.append("? "); //Znak nieobsługiwany
                 }
             }
@@ -186,22 +192,27 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             for (String symbol : morseSymbols)//Iteracja po symbolach Morse'a
             {
                 //Jeśli symbol jest obsługiwany, znajdź jego odpowiednik w mapie
-                if (przerabianieMorseNaTekst.containsKey(symbol)) {
+                if (przerabianieMorseNaTekst.containsKey(symbol))
+                {
                     tekst.append(przerabianieMorseNaTekst.get(symbol));
-                } else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
+                }
+                else if (symbol.equals("/"))//Separator słów w kodzie Morse'a
                 {
                     tekst.append(" ");//Dodanie spacji jako separatora między słowami
-                } else {
+                }
+                else
+                {
                     tekst.append("?"); //Kod nieobsługiwany
                 }
             }
             return tekst.toString(); //Zwracam zbudowany ciąg znaków
         }
     }
-    //Cyrylica
-    public class KonwerterMorseCyrylica {
+    //Cyrylica, nowa klasa
+    public class KonwerterMorseCyrylica
+    {
         private static final HashMap<Character, String> przerabianieTekstuNaMorseCyrylica = new HashMap<>();//tworzy mapę, która przechowuje parę klucz jako character np. "A" i wartość String np. kod Morse ".-".
-        private static final HashMap<String, Character> przerabianieMorseNaTekstCyrylica = new HashMap<>();//tworzy mapę odwrotną do poprzedniej, przechowuje parę klucz jako String (kod Morse) i Character jako literę z alfabetu.
+        private static final HashMap<String, Character> przerabianieMorseNaTekstCyrylica = new HashMap<>();//tworzy mapę odwrotną do poprzedniej, przechowuje parę klucz jako String (kod Morse) i Character jako literę z alfabetu Cyrylicy.
 
         static
         {
@@ -240,6 +251,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorseCyrylica.put('Ю', "..--");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Я', ".-.-");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('Ё', ".--.--"); // przypisanie klucza i wartości (key, value)
+            //alfabet cyrylicy zawiera 33 znaki tak jak powyżej
 
             //cyfry
             przerabianieTekstuNaMorseCyrylica.put('1', ".----");//przypisanie klucza i wartości (key, value)
@@ -253,6 +265,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
             przerabianieTekstuNaMorseCyrylica.put('9', "----.");//przypisanie klucza i wartości (key, value)
             przerabianieTekstuNaMorseCyrylica.put('0', "-----");//przypisanie klucza i wartości (key, value)
 
+            //spacja
             przerabianieTekstuNaMorseCyrylica.put(' ', "/");//przypisanie klucza i wartości (key, value)
 
             //Znaki interpunkcyjne i symbole
@@ -281,31 +294,27 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                 przerabianieMorseNaTekstCyrylica.put(entry.getValue(), entry.getKey());
             }
         }
-
         public static String przerobNaTekstCyrylica(String tekstCyrylica)
         {
-            StringBuilder kodMorse = new StringBuilder();
+            StringBuilder kodMorseCyrylica = new StringBuilder();
             for (char c : tekstCyrylica.toUpperCase().toCharArray())
             {
                 if (przerabianieTekstuNaMorseCyrylica.containsKey(c))
                 {
-            /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
+            /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorseCyrylica),
             a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
-                    kodMorse.append(przerabianieTekstuNaMorseCyrylica.get(c)).append(" ");
+                    kodMorseCyrylica.append(przerabianieTekstuNaMorseCyrylica.get(c)).append(" ");
                 }
                 else
                 {
-                    kodMorse.append("? "); //Znak nieobsługiwany
+                    kodMorseCyrylica.append("? "); //Znak nieobsługiwany
                 }
             }
 
-            return kodMorse.toString().
+            return kodMorseCyrylica.toString().
             trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
         }
-        //Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
-
         public static String przerobNaMorseCyrylica(String morseCyrylica)//Metoda, która zamienia kod Morse'a na tekst w języku naturalnym
-
         {
             StringBuilder tekst = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
             String[] morseSymbols = morseCyrylica.split(" ");//Rozdzielenie kodu Morse'a na symbole według spacji
@@ -325,7 +334,7 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                     tekst.append("?"); //Kod nieobsługiwany
                 }
             }
-            return tekst.toString(); //Zwracam zbudowany ciąg znaków
+            return tekst.toString(); //Zwraca zbudowany ciąg znaków
         }
     }
 }
