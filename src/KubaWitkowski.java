@@ -19,11 +19,11 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                 System.out.println(obj.autor);//Wyświetla tekst w konsoli na podstawie zmiennej prywatnej autor. Inicjalizacja możliwa dzięki powołaniu się na obiekt.
                 System.out.println("\nMenu:");//Wyświetla użytkownikowi napis "Menu:" i przechodzi do nowej linii. Znak \n pomaga w stworzeniu pustej linii po wyświetleniu zawartości zmiennej autor.
                 System.out.println("1. Pomoc");//Wyświetla użytkownikowi napis "1. Pomoc" i przechodzi do nowej linii.
-                System.out.println("2. Przerób kod Morse'a na tekst");//Wyświetla użytkownikowi napis "2. Przerób kod Morse'a na tekst" i przechodzi do nowej linii.
-                System.out.println("3. Przerób tekst na kod Morse'a");//Wyświetla użytkownikowi napis "3. Przerób tekst na kod Morse'a" i przechodzi do nowej linii.
-                System.out.println("4. Przerób kod Morse'a na tekst (cyrylica)");//Wyświetla użytkownikowi napis "2. Przerób kod Morse'a na tekst" i przechodzi do nowej linii.
-                System.out.println("5. Przerób tekst na kod Morse'a (cyrylica)");//Wyświetla użytkownikowi napis "3. Przerób tekst na kod Morse'a" i przechodzi do nowej linii.
-                System.out.println("6. Wyjście");//Wyświetla użytkownikowi napis "4. Wyjście" i przechodzi do nowej linii.
+                System.out.println("2. Przerób kod Morse'a na tekst (alfabet łaciński z obsługą polskich znaków diaktrycznych)");//Wyświetla użytkownikowi napis "2. Przerób kod Morse'a na tekst (alfabet łaciński z obsługą polskich znaków diaktrycznych)" i przechodzi do nowej linii.
+                System.out.println("3. Przerób tekst na kod Morse'a (alfabet łaciński z obsługą polskich znaków diaktrycznych)");//Wyświetla użytkownikowi napis "3. Przerób tekst na kod Morse'a (alfabet łaciński z obsługą polskich znaków diaktrycznych)" i przechodzi do nowej linii.
+                System.out.println("4. Przerób kod Morse'a na tekst (cyrylica rosyjska)");//Wyświetla użytkownikowi napis "4. Przerób kod Morse'a na tekst (cyrylica rosyjska)" i przechodzi do nowej linii.
+                System.out.println("5. Przerób tekst na kod Morse'a (cyrylica rosyjska)");//Wyświetla użytkownikowi napis "5. Przerób tekst na kod Morse'a (cyrylica rosyjska)" i przechodzi do nowej linii.
+                System.out.println("6. Wyjście");//Wyświetla użytkownikowi napis "6. Wyjście" i przechodzi do nowej linii.
                 System.out.print("Wybór: ");//Wyświetla użytkownikowi napis "Wybór: ".
 
                 int wybor = scanner.nextInt();//Deklaracja zmiennej wybor w postaci integer i wykorzystanie obiektu klasy Scanner jako nasłuch liczby całkowitej
@@ -50,13 +50,13 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                     case 4: //wybór 2
                         System.out.print("Podaj kod Morse'a (znaki rozdzielone spacją): ");//Wyświetla napis w konsoli.
-                        String kodMorseCyrylica = scanner.nextLine();//Program przypisuje całą wczytaną linię (jako ciąg znaków String) do zmiennej "kodMorse".
-                        System.out.println("\nTekst na podstawie kodu: " + KonwerterMorseCyrylica.przerobNaMorseCyrylica(kodMorseCyrylica));//wywołanie metody przerobNaMorse() z klasy KonwerterMorse, przekazywany argument to kodMorse czyli tekst w kodzie Morse wprowadzony przez użytkownika.
+                        String kodMorseCyrylica = scanner.nextLine();//Program przypisuje całą wczytaną linię (jako ciąg znaków String) do zmiennej "kodMorseCyrylica".
+                        System.out.println("\nTekst na podstawie kodu: " + KonwerterMorseCyrylica.przerobNaMorseCyrylica(kodMorseCyrylica));//wywołanie metody przerobNaMorseCyrylica() z klasy KonwerterMorseCyrylica, przekazywany argument to kodMorseCyrylica czyli tekst w kodzie Morse wprowadzony przez użytkownika.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                     case 5: //wybór 3
                         System.out.print("Podaj tekst do konwersji na kod Morse'a: ");//Wyświetla napis w konsoli.
-                        String tekstCyrylica = scanner.nextLine();//Program przypisuje całą wczytaną linię (jako ciąg znaków String) do zmiennej "tekst".
-                        System.out.println("\nKod Morse'a na podstawie tekstu: " + KonwerterMorseCyrylica.przerobNaTekstCyrylica(tekstCyrylica));//wywołanie metody przerobNaTekst() z klasy KonwerterMorse, przekazywany argument to tekst po przerobieniu z kodu Morse który wprowadził wcześniej użytkownik.
+                        String tekstCyrylica = scanner.nextLine();//Program przypisuje całą wczytaną linię (jako ciąg znaków String) do zmiennej "tekstCyrylica".
+                        System.out.println("\nKod Morse'a na podstawie tekstu: " + KonwerterMorseCyrylica.przerobNaTekstCyrylica(tekstCyrylica));//wywołanie metody przerobNaTekstCyrylica() z klasy KonwerterMorseCyrylica, przekazywany argument to tekst po przerobieniu z kodu Morse który wprowadził wcześniej użytkownik.
                         break; //program wychodzi tylko z switch i wraca na początek pętli while (ponieważ jej warunek true nadal jest spełniony).
                     case 6: //wybór 4
                         System.out.print("\nDziękuję za skorzystanie z programu. Do widzenia.");//Wyświetla napis w konsoli.
@@ -164,20 +164,17 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
         }
 
         public static String przerobNaTekst(String tekst) {
-            StringBuilder morseCode = new StringBuilder();
             StringBuilder kodMorse = new StringBuilder();
             for (char c : tekst.toUpperCase().toCharArray()) {
                 if (przerabianieTekstuNaMorse.containsKey(c)) {
                 /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
                 a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
-                    morseCode.append(przerabianieTekstuNaMorse.get(c)).append(" ");
                     kodMorse.append(przerabianieTekstuNaMorse.get(c)).append(" ");
                 } else {
-                    morseCode.append("? "); //Znak nieobsługiwany
                     kodMorse.append("? "); //Znak nieobsługiwany
                 }
             }
-            return morseCode.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
+            return kodMorse.toString().trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
             //Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
         }
 
@@ -287,7 +284,6 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
 
         public static String przerobNaTekstCyrylica(String tekstCyrylica)
         {
-            StringBuilder morseCode = new StringBuilder();//Obiekt do budowy tekstu z kodu Morse'a
             StringBuilder kodMorse = new StringBuilder();
             for (char c : tekstCyrylica.toUpperCase().toCharArray())
             {
@@ -295,17 +291,15 @@ public class KubaWitkowski //deklaracja publicznej klasy MorseDK.
                 {
             /*Dodanie do kodu Morse'a odpowiednika znaku 'c' (pobrany z mapy przerabianieTekstuNaMorse),
             a następnie dodanie spacji jako separatora między kodami Morse'a dla kolejnych znaków*/
-                    morseCode.append(przerabianieTekstuNaMorseCyrylica.get(c)).append(" ");
                     kodMorse.append(przerabianieTekstuNaMorseCyrylica.get(c)).append(" ");
                 }
                 else
                 {
-                    morseCode.append("? "); //Znak nieobsługiwany
                     kodMorse.append("? "); //Znak nieobsługiwany
                 }
             }
 
-            return morseCode.toString().
+            return kodMorse.toString().
             trim();//Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
         }
         //Zwracanie ciągu znaków Morse'a bez zbędnych spacji na końcu
